@@ -31,8 +31,16 @@ console.log(canCastSpell(false, false));
  */
 function isHidden(hiding, aware) {
   // TODO
-
+  if(hiding || !aware) {
+    return `creature is hidden`;
+  } else {
+    return `creature is not hidden`;
+  } 
 }
+
+console.log(isHidden(true, false)); 
+console.log(isHidden(true, true)); 
+console.log(isHidden(false, true));
 
 /**
  * A strike hits if the attack value is greater than or equal
