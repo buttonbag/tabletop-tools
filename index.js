@@ -7,7 +7,20 @@
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
   // TODO
+  if (hasScroll && isSpellPrepared) {
+    return "has scroll AND spell is prepared";
+  } else if(hasScroll) {
+    return "has scroll";
+  } else if (isSpellPrepared) {
+    return "spell prepared";
+  } else {
+    return "no action";
+  }
 }
+console.table(canCastSpell(true, true));
+console.log(canCastSpell(true, false));
+console.log(canCastSpell(false, true));
+console.log(canCastSpell(false, false));
 
 /**
  * A creature is hidden from an observer if it is actively hiding
