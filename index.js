@@ -73,7 +73,24 @@ console.log(doesStrikeHit(10, 10)); //hit
  */
 function doesStrikeCrit(attack, ac) {
   // TODO
+  const isTenOver = attack - ac;
+  
+  if (isTenOver >= 10) {
+    return `crit!`
+  }
+  else if (attack >= ac) {
+    return `hit`
+  } else {
+    return `miss`;
+  }
 }
+
+console.log(`CRIT?`, doesStrikeCrit(10, 20)); //miss
+console.log(`CRIT?`, doesStrikeCrit(10, 5)); //hit
+console.log(`CRIT?`, doesStrikeCrit(10, 10)); //hit
+console.log(`CRIT?`, doesStrikeCrit(20, 20)); //hit
+console.log(`CRIT?`, doesStrikeCrit(20, 5)); //crit
+console.log(`CRIT?`, doesStrikeCrit(20, 10)); //crit
 
 /**
  * A creature can restore hit points (HP) by healing,
