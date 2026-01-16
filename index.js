@@ -51,7 +51,18 @@ console.log(isHidden(false, true));
  */
 function doesStrikeHit(attack, ac) {
   // TODO
+  if (attack >= ac) {
+    return `hit`;
+  } else {
+    return `miss`;
+  }
 }
+
+console.log(doesStrikeHit(10, 20)); //miss
+console.log(doesStrikeHit(10, 5)); //hit
+console.log(doesStrikeHit(10, 10)); //hit
+
+
 
 /**
  * A strike is a critical hit if the attack value is at least
