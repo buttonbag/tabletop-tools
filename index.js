@@ -77,8 +77,7 @@ function doesStrikeCrit(attack, ac) {
   
   if (isTenOver >= 10) {
     return `crit!`
-  }
-  else if (attack >= ac) {
+  } else if (attack >= ac) {
     return `hit`
   } else {
     return `miss`;
@@ -102,7 +101,22 @@ console.log(`CRIT?`, doesStrikeCrit(20, 10)); //crit
  */
 function heal(maxHp, currentHp, healAmount) {
   // TODO
+  const healthGain = currentHp+healAmount;
+  let leftOver = 0;
+  if (healthGain >= maxHp) {
+    leftOver = healthGain-maxHp;
+    return healthGain-leftOver;
+  } else {
+    return healthGain;
+  }
 }
+
+//         maxHp, currentHp, healAmount)
+console.log(heal(100, 50, 25)); 
+console.log(heal(100, 100, 25)); // 100
+console.log(heal(100, 100, 80)); // 100
+console.log(heal(200, 100, 80)); // 180
+
 
 /**
  * When a character uses a skill they have proficiency in,
