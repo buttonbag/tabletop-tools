@@ -17,7 +17,7 @@ function canCastSpell(isSpellPrepared, hasScroll) {
     return "no action";
   }
 }
-console.table(canCastSpell(true, true));
+console.log(canCastSpell(true, true));
 console.log(canCastSpell(true, false));
 console.log(canCastSpell(false, true));
 console.log(canCastSpell(false, false));
@@ -31,6 +31,7 @@ console.log(canCastSpell(false, false));
  */
 function isHidden(hiding, aware) {
   // TODO
+
 }
 
 /**
