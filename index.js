@@ -173,7 +173,22 @@ console.log(getProficiencyBonus(10, `untrained`));
  */
 function getCoverBonus(behindObstacle, takingCover) {
   // TODO
+  let bonus = 0;
+  if (behindObstacle) {
+    return bonus+=2
+  } else 
+  if (takingCover) {
+    return bonus+=4
+  } else {
+    return bonus;
+  }
 }
+
+console.log(getCoverBonus(true, false));
+console.log(getCoverBonus(true, true));
+console.log(getCoverBonus(false, false));
+console.log(getCoverBonus(false, true));
+
 
 /**
  * A creature's current hit points (HP) is reduced by taking damage.
