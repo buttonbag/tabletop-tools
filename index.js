@@ -136,7 +136,30 @@ console.log(heal(200, 100, 80)); // 180
  */
 function getProficiencyBonus(level, rank) {
   // TODO
+  let bonus = 0;
+  if(rank === 'legendary') {
+    bonus += 8;
+    return level+bonus;
+  } else if(rank === 'master') {
+    bonus += 6;
+    return level+bonus;
+  } else if(rank === 'expert') {
+    bonus += 4;
+    return level+bonus;
+  } else if(rank === 'trained') {
+    bonus += 2;
+    return level+bonus;
+  } else {
+    return level+bonus;
+  }
 }
+
+console.log(getProficiencyBonus(10, `legendary`));
+console.log(getProficiencyBonus(10, `master`));
+console.log(getProficiencyBonus(10, `expert`));
+console.log(getProficiencyBonus(10, `trained`));
+console.log(getProficiencyBonus(10, `untrained`));
+
 
 /**
  * A creature can get a bonus to its armor class (AC) by taking cover.
