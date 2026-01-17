@@ -204,7 +204,23 @@ console.log(getCoverBonus(false, true));
  */
 function getRemainingHp(maxHp, currentHp, damage) {
   // TODO
+  let creatureHP = currentHp;
+  if (damage >= 2*maxHp) {
+    creatureHP=-1
+    return `${creatureHP} instant death`;
+  } else if (creatureHP - damage <= 0) {
+    creatureHP=0;
+    return `${creatureHP} dead`;
+  } else {
+    creatureHP-=damage;
+    return `${creatureHP} still alive`;
+  }
 }
+
+console.log(getRemainingHp(100, 50, 200)); // instant death
+console.log(getRemainingHp(100, 50, 199)); // dead, not instant
+console.log(getRemainingHp(100, 50, 50)); // dead, not instant
+console.log(getRemainingHp(100, 50, 49)); // 1 still alive
 
 /**
  * All creatures can see in bright light.
