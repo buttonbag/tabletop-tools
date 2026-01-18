@@ -278,4 +278,17 @@ console.log(canSee(`bright`,`average`));
  */
 function getStrikeDamage(attack, ac, damage) {
   // TODO
+  const currentHp = 100;
+  if(doesStrikeCrit(attack, ac) === `crit!`) { // damage doubles if crit
+    return currentHp - (damage * 2);
+  } else if (doesStrikeHit(attack, ac) === `hit`) { // strike deals damage if hit
+    return currentHp - damage;
+  } else { // damage 0 if miss
+    return `damage 0`;
+  }
+
 }
+
+console.log(getStrikeDamage(150, 100, 30)); // crit
+console.log(getStrikeDamage(100, 100, 30)); // hit
+console.log(getStrikeDamage(80, 100, 30)); // 0
