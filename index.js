@@ -232,7 +232,39 @@ console.log(getRemainingHp(100, 50, 49)); // 1 still alive
  */
 function canSee(light, vision) {
   // TODO
+  const isDarkVision = `dark`;
+  const isLowLightVision = `low-light`;
+  const isAverage = `average`;
+
+  if (vision === isDarkVision) {
+    return `creature can see`;
+  } else if (vision === isLowLightVision) {
+    if (light === `dark`) {
+      return `creature can't see`;
+    } else {
+      return `creature can see`;
+    }
+  } else if (vision === isAverage) {
+    if (light === `dark` || light === `dim`) {
+      return `creature can't see`;
+    } else {
+      return `creature can see`;
+    }
+  }
 }
+
+console.log(canSee(`dark`,`dark`));
+console.log(canSee(`dark`,`low-light`));
+console.log(canSee(`dark`,`average`));
+
+console.log(canSee(`dim`,`dark`));
+console.log(canSee(`dim`,`low-light`));
+console.log(canSee(`dim`,`average`));
+
+console.log(canSee(`bright`,`dark`));
+console.log(canSee(`bright`,`low-light`));
+console.log(canSee(`bright`,`average`));
+
 
 /**
  * A strike deals damage if it hits, unless the strike is a critical hit,
